@@ -1,0 +1,44 @@
+<!-- JINJA: Motor de plantillas html que permite ejecutar código-->
+
+{% with messages = get_flashed_messages()%}
+{% if messages%}
+{%for message in messages%}
+<p>{{message}}</p>
+{%endfor%}
+{%endif%}
+{%endwith%}
+
+
+<form action="/add_contact" method="POST">      <!--Envia un action a travéz de la ruta add_contact con metodo POST-->    
+    <input type="fullname" name="fullname" placeholder="fullname">
+    <input type="phone" name="phone" placeholder="phone">
+    <input type="email" name="contact" placeholder="contact">
+    <button type="submit"> Save </button>
+</form>
+
+<table>
+<thead>
+<tr>
+<td>fullname</td>
+<td>phone</td>
+<td>contact</td>
+<td>Modificar
+</td>
+
+</tr>
+
+</thead>
+<tbody>
+{%for contacto in contacts%}
+<tr>
+    <td>{{contacto.1}}</td>
+    <td>{{contacto.2}}</td>
+    <td>{{contacto.3}}</td>
+    <td><a href="/edit/{{contacto.0}}">Edit</a>   <!-- {{parametros}} que le paso al href --> 
+        <a href="/delete/{{contacto.0}}">Delete</a>
+    </td>
+</tr>
+{%endfor%}
+
+</tbody>
+</table>
