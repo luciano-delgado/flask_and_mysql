@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+     <meta charset="utf-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <title>Flask APP Contact</title>
+     <meta name="description" content="">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <!-- CSS only Boostrap-->
+     <link rel="stylesheet" href="https://bootswatch.com/5/lumen/bootstrap.min.css" >
+     <link rel="stylesheet" href="{{url_for('static',filename='css/main.css')}}"> <!-- llamo a los estilos de css en mi carpeta static-->
+</head>
+
+
+
+<body> <!-- En block body va el contenido variable de las subplantillas index y edit_contact-->
+
+     <!-- NAVIGATION BAR: Este bloque que está por encima del container lo traje de bootsapp sección components>Navbar-->
+     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+          <div class="container-fluid">
+               <a class="navbar-brand" href="/">
+                    OYP Task Management
+               </a>
+               <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+               </button>
+               <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                  
+               </div>
+          </div>
+     </nav>
+
+
+
+     <div class="container pt-4"> <!-- pt: padding top de 4-->
+          {%block body%}
+          {%endblock%}
+     </div>
+
+     <!-- footer -->
+    <!-- scripts -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <!-- llamo archivo javascript-->
+    <script src="{{url_for('static', filename='js/main.js')}}"></script> 
+
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+{% extends'layout.html'%} <!-- Voy a usar el formato basico de layout.html y le inyecto contenido a los bloques-->
+
+{%block body%}
+
+<div class="col-md-4 offset-md-4">
+    <div class="card card-body">
+        <form action="/update/{{contact.0}}" method="POST">
+
+            <!-- form-gruop: le da separación a los inputs-->
+            <div class="form-group"><input type="fullname" name="fullname" placeholder="fullname" value="{{contact.1}}"class="form-control" ></div>
+            <div class="form-group"><input type="phone" name="phone" placeholder="phone" value="{{contact.2}}"class="form-control"></div>
+            <div class="form-group"><input type="email" name="contact" placeholder="contact" value="{{contact.3}}"class="form-control"></div>
+            <div class="form-group"><button type="submit" class=" btn btn-success btn-block"> Save </button></div>
+
+
+
+        </form>
+
+    </div>
+
+</div>
+
+{%endblock%}
