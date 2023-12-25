@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for, flash
 from flask_mysqldb import MySQL
 from termcolor import colored
 
-
+# Este es un cambio para ver como figura en git 
 app  =Flask(__name__)
 app.config['MYSQL_HOST']= 'localhost'   #Especificamos servidor usuario contraseña y DB
 app.config['MYSQL_USER']= 'lucho'   
